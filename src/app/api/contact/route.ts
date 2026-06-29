@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import type { ContactFormData, ApiResponse } from "@/lib/types";
 import { logger } from "@/lib/logger";
@@ -129,18 +129,58 @@ const sendContactNotification = async (body: ContactFormData): Promise<void> => 
 };
 
 /**
+ * Detects transient SMTP/network errors worth retrying once.
+ */
+const isRetryableMailError = (error: unknown): boolean => {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  const code = (error as Error & { code?: string }).code;
+  return (
+    code === "ESOCKET" ||
+    code === "ECONNECTION" ||
+    code === "ETIMEDOUT" ||
+    error.message.includes("Unexpected socket close")
+  );
+};
+
+/**
  * Fire-and-forget mail dispatch so API response is not coupled to SMTP availability.
+ * Uses `after()` so Vercel can keep the invocation alive for post-response work.
  */
 const dispatchContactNotification = (body: ContactFormData): void => {
-  void sendContactNotification(body)
-    .then(() => {
+  after(async () => {
+    try {
+      await sendContactNotification(body);
       logger.info("Contact notification email sent", {
         name: body.name,
         email: body.email,
         service: body.service,
       });
-    })
-    .catch((error: unknown) => {
+      return;
+    } catch (error: unknown) {
+      if (isRetryableMailError(error)) {
+        try {
+          await sendContactNotification(body);
+          logger.info("Contact notification email sent after retry", {
+            name: body.name,
+            email: body.email,
+            service: body.service,
+          });
+          return;
+        } catch (retryError: unknown) {
+          const retryMessage = retryError instanceof Error ? retryError.message : "Unknown error";
+          logger.error("Contact notification email failed after retry", {
+            name: body.name,
+            email: body.email,
+            service: body.service,
+            error: retryMessage,
+          });
+          return;
+        }
+      }
+
       const message = error instanceof Error ? error.message : "Unknown error";
       logger.error("Contact notification email failed", {
         name: body.name,
@@ -148,7 +188,8 @@ const dispatchContactNotification = (body: ContactFormData): void => {
         service: body.service,
         error: message,
       });
-    });
+    }
+  });
 };
 
 /**
