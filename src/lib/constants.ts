@@ -2,14 +2,7 @@ import type { NavLink, Service, PortfolioItem, TeamMember, Stat } from "./types"
 
 export type Locale = "en" | "zh";
 
-const DEFAULT_SITE_URL = "https://example.com";
-
-const resolveSiteUrl = (input?: string): string => {
-  const value = input?.trim() || DEFAULT_SITE_URL;
-  return new URL(value).toString().replace(/\/$/, "");
-};
-
-export const SITE_URL = resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+export const SITE_URL = "https://slagga.top";
 
 interface SeoEntry {
   readonly title: string;
@@ -125,7 +118,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       tagline: "区块链软件开发",
       description:
         "我们构建安全、可扩展的区块链解决方案，驱动去中心化未来。从智能合约到全栈 dApp，团队交付可用于生产环境的 Web3 软件。",
-      email: "hello@next-ai.dev",
+      email: "slagga@duck.com",
       location: "San Francisco, CA",
     },
     stats: [
@@ -426,7 +419,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       tagline: "Blockchain Software Development",
       description:
         "We build secure, scalable blockchain solutions that power the decentralized future. From smart contracts to full-stack dApps, our team delivers production-grade Web3 software.",
-      email: "hello@next-ai.dev",
+      email: "slagga@duck.com",
       location: "San Francisco, CA",
     },
     stats: [
