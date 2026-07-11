@@ -44,7 +44,7 @@ export default async function PortfolioPage(): Promise<React.ReactElement> {
 
   return (
     <div className="pt-32 pb-20">
-      <PortfolioSection locale={locale} />
+      <PortfolioSection locale={locale} showAll />
       <CtaSection locale={locale} />
       <JsonLd id="ld-portfolio" payload={buildPortfolioJsonLd(locale)} />
       <JsonLd

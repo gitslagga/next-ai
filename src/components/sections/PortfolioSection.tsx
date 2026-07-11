@@ -6,15 +6,23 @@ import { Button } from "@/components/ui/Button";
 
 interface PortfolioSectionProps {
   readonly locale: Locale;
+  /**
+   * When true, renders the full portfolio and hides the "view all" CTA.
+   * Used on the dedicated /portfolio page.
+   */
+  readonly showAll?: boolean;
 }
 
 /**
  * Portfolio section showcasing case studies
  * Features filterable project cards with results metrics
  */
-export function PortfolioSection({ locale }: PortfolioSectionProps): React.ReactElement {
+export function PortfolioSection({
+  locale,
+  showAll = false,
+}: PortfolioSectionProps): React.ReactElement {
   const { portfolio, ui } = getSiteContent(locale);
-  const featured = portfolio.slice(0, 6);
+  const featured = showAll ? portfolio : portfolio.slice(0, 6);
 
   return (
     <section className="relative py-20 md:py-32" id="portfolio">
@@ -71,11 +79,13 @@ export function PortfolioSection({ locale }: PortfolioSectionProps): React.React
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <Button variant="outline" href="/portfolio">
-            {ui.portfolioViewAllCta}
-          </Button>
-        </div>
+        {!showAll ? (
+          <div className="text-center mt-12">
+            <Button variant="outline" href="/portfolio">
+              {ui.portfolioViewAllCta}
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );
