@@ -69,3 +69,9 @@ export interface Stat {
   readonly label: string;
   readonly suffix?: string;
 }
+
+/** FAQ entry — used for FAQPage JSON-LD and on-page content */
+export interface FaqEntry {
+  readonly question: string;
+  readonly answer: string;
+}

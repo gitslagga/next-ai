@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { getSiteContent, SITE_URL } from "@/lib/constants";
 import { getRequestLocale } from "@/lib/locale";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildOrganizationJsonLd, buildWebSiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 /**
@@ -49,6 +51,11 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: "NEXT AI" }],
     alternates: {
       canonical: "/",
+      languages: {
+        "en-US": "/",
+        "zh-CN": "/",
+        "x-default": "/",
+      },
     },
     openGraph: {
       type: "website",
@@ -102,6 +109,8 @@ export default async function RootLayout({
         <Navbar locale={locale} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} />
+        <JsonLd id="ld-organization" payload={buildOrganizationJsonLd(locale)} />
+        <JsonLd id="ld-website" payload={buildWebSiteJsonLd(locale)} />
       </body>
     </html>
   );

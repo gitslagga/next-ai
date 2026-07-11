@@ -1,4 +1,4 @@
-import type { NavLink, Service, PortfolioItem, TeamMember, Stat } from "./types";
+import type { NavLink, Service, PortfolioItem, TeamMember, Stat, FaqEntry } from "./types";
 
 export type Locale = "en" | "zh";
 
@@ -22,6 +22,7 @@ interface SiteContent {
   readonly services: readonly Service[];
   readonly portfolio: readonly PortfolioItem[];
   readonly team: readonly TeamMember[];
+  readonly faq: readonly FaqEntry[];
   readonly ui: {
     readonly navbarCta: string;
     readonly navbarToggleAriaLabel: string;
@@ -206,6 +207,58 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
           "合规与监管咨询",
         ],
       },
+      {
+        id: "ai-solutions",
+        icon: "🤖",
+        title: "人工智能开发",
+        description:
+          "面向企业的 AI 应用与大模型集成服务，涵盖智能对话、RAG 知识库、Agent 工作流与链上 AI 场景落地。",
+        features: [
+          "大模型微调与私有化部署",
+          "RAG 知识库与向量检索",
+          "AI Agent 与工作流编排",
+          "AI + 区块链融合应用",
+        ],
+      },
+      {
+        id: "cross-border-ecommerce",
+        icon: "🛒",
+        title: "跨境电商",
+        description:
+          "端到端跨境电商平台开发，支持多语言、多币种与全球支付，助力品牌快速出海并接入 Web3 支付通道。",
+        features: [
+          "独立站与多店铺系统",
+          "多语言 / 多币种支持",
+          "全球支付与加密货币结算",
+          "物流、海关与税务对接",
+        ],
+      },
+      {
+        id: "chat-software",
+        icon: "💬",
+        title: "聊天软件",
+        description:
+          "高并发即时通讯与社交软件开发，支持端到端加密、群组、音视频通话与 Web3 身份体系。",
+        features: [
+          "端到端加密即时消息",
+          "群聊 / 频道 / 音视频通话",
+          "钱包登录与链上身份",
+          "机器人与开放 API 生态",
+        ],
+      },
+      {
+        id: "anime-games",
+        icon: "🎮",
+        title: "动漫游戏",
+        description:
+          "覆盖二次元、休闲与 GameFi 全品类的游戏研发服务，支持链上资产、NFT 道具与跨端发行。",
+        features: [
+          "Unity / Unreal 客户端开发",
+          "高性能游戏服务器架构",
+          "NFT 道具与链上资产系统",
+          "GameFi 经济模型设计",
+        ],
+      },
     ],
     portfolio: [
       {
@@ -268,6 +321,46 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         tags: ["Solidity", "ERC-3643", "Node.js", "PostgreSQL"],
         results: ["已通证化 $1 亿", "5000 名投资人", "覆盖 4 个司法辖区"],
       },
+      {
+        id: "ai-agent-platform",
+        title: "企业级 AI Agent 平台",
+        category: "AI",
+        description:
+          "为金融科技客户构建多智能体协同平台，整合 RAG 知识库与私有大模型，替代 60% 人工客服工作量。",
+        imageUrl: "/portfolio/ai.jpg",
+        tags: ["LangGraph", "OpenAI", "Qdrant", "Next.js"],
+        results: ["日处理会话 20 万+", "人工替代率 60%", "平均响应 1.2s"],
+      },
+      {
+        id: "cross-border-store",
+        title: "全球 DTC 独立站",
+        category: "跨境电商",
+        description:
+          "面向北美、欧洲、东南亚的多店铺 DTC 平台，支持 12 种语言、8 种法币与稳定币结算。",
+        imageUrl: "/portfolio/ecommerce.jpg",
+        tags: ["Next.js", "Stripe", "USDC", "Shopify Hydrogen"],
+        results: ["GMV 年增 3.5x", "覆盖 25 国", "结算成本 -42%"],
+      },
+      {
+        id: "web3-messenger",
+        title: "Web3 加密即时通讯",
+        category: "聊天软件",
+        description:
+          "端到端加密 IM，支持钱包登录、群聊、音视频与链上身份，服务多家 DAO 与项目社群。",
+        imageUrl: "/portfolio/chat.jpg",
+        tags: ["Signal Protocol", "WebRTC", "SIWE", "Rust"],
+        results: ["月活 30 万+", "P99 延迟 <150ms", "接入 40+ 社群"],
+      },
+      {
+        id: "anime-gamefi",
+        title: "二次元 GameFi 项目",
+        category: "动漫游戏",
+        description:
+          "跨端二次元卡牌游戏，融合 NFT 角色、链上战斗结算与 GameFi 经济模型，登陆 iOS/Android/Web。",
+        imageUrl: "/portfolio/game.jpg",
+        tags: ["Unity", "Cocos", "Solana", "ERC-1155"],
+        results: ["首月下载 80 万", "付费率 12%", "NFT 交易额 $2000 万"],
+      },
     ],
     team: [
       {
@@ -293,6 +386,72 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         role: "安全研究负责人",
         bio: "曾在头部 20 个协议中发现 50+ 关键漏洞，前 Trail of Bits 首席审计师。",
         imageUrl: "/team/yuki.jpg",
+      },
+      {
+        name: "Wei Zhang",
+        role: "AI 负责人",
+        bio: "前 Google DeepMind 研究工程师，主导过多款 LLM Agent 与 RAG 系统，累计服务用户过亿。",
+        imageUrl: "/team/wei.jpg",
+      },
+      {
+        name: "Emma Silva",
+        role: "跨境电商负责人",
+        bio: "前 Shopify Plus 解决方案架构师，操盘过 5 个年 GMV 破亿美元的 DTC 品牌全球化项目。",
+        imageUrl: "/team/emma.jpg",
+      },
+      {
+        name: "David Kim",
+        role: "即时通讯架构师",
+        bio: "前 LINE / Signal 核心工程师，深耕分布式 IM、端到端加密与实时音视频十年以上。",
+        imageUrl: "/team/david.jpg",
+      },
+      {
+        name: "Nina Wu",
+        role: "游戏工作室负责人",
+        bio: "前米哈游主美与技术策划，主导多款二次元手游从立项到上线，曾获 App Store 年度精选。",
+        imageUrl: "/team/nina.jpg",
+      },
+    ],
+    faq: [
+      {
+        question: "NEXT AI 提供哪些开发服务？",
+        answer:
+          "涵盖区块链（智能合约、dApp、DeFi、NFT、审计、咨询）、人工智能（LLM/Agent/RAG）、跨境电商、聊天软件（IM/E2EE）以及动漫游戏（Unity/Cocos + GameFi）等端到端交付。",
+      },
+      {
+        question: "支持哪些区块链与公链？",
+        answer:
+          "已在生产环境交付 15+ 条主流公链项目，包括 Ethereum、Solana、Polygon、BNB Chain、Arbitrum、Optimism、Base、Avalanche、TON、Aptos、Sui、Cosmos SDK 等。",
+      },
+      {
+        question: "一个典型项目的交付周期是多久？",
+        answer:
+          "MVP 通常 4-6 周落地，完整生产版本 8-16 周。采用双周敏捷迭代，每个里程碑提供可运行 Demo 与代码交付。",
+      },
+      {
+        question: "AI 项目支持私有化部署吗？",
+        answer:
+          "支持。可基于 Llama、Qwen、DeepSeek 等开源大模型做微调与本地/私有云部署，结合 RAG 知识库、Agent 编排与企业系统集成，满足数据合规要求。",
+      },
+      {
+        question: "跨境电商项目提供哪些能力？",
+        answer:
+          "独立站与多店铺、12+ 语言、8+ 法币和 USDC/USDT 稳定币结算，并对接 Stripe、PayPal、支付宝国际版、物流、海关、税务与本地合规。",
+      },
+      {
+        question: "聊天软件如何保证安全与性能？",
+        answer:
+          "采用 Signal Protocol 端到端加密、可选钱包登录（SIWE），分布式消息网关实测 P99 延迟 <150ms，支持百万级并发在线与音视频通话。",
+      },
+      {
+        question: "动漫游戏支持链上资产吗？",
+        answer:
+          "支持。Unity / Unreal / Cocos 客户端结合 ERC-721/1155 或 Solana NFT，实现角色、道具、皮肤的链上确权与二级市场交易，并可设计完整 GameFi 经济模型。",
+      },
+      {
+        question: "如何开始合作？",
+        answer:
+          "通过 /contact 页面提交项目简介或邮件联系 slagga@duck.com，我们会在 24 小时内回复并安排 30 分钟的技术需求沟通。",
       },
     ],
     ui: {
@@ -381,6 +540,24 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         "NFT",
         "加密技术",
         "区块链开发公司",
+        "人工智能开发",
+        "AI 应用开发",
+        "大模型集成",
+        "AI Agent",
+        "RAG 知识库",
+        "跨境电商开发",
+        "独立站开发",
+        "聊天软件开发",
+        "即时通讯 IM",
+        "端到端加密",
+        "动漫游戏开发",
+        "GameFi",
+        "Solana 开发",
+        "以太坊开发",
+        "Layer 2",
+        "RWA 通证化",
+        "智能合约审计",
+        "NEXT AI",
       ],
       pages: {
         about: {
@@ -507,6 +684,58 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
           "Compliance & regulatory guidance",
         ],
       },
+      {
+        id: "ai-solutions",
+        icon: "🤖",
+        title: "AI Development",
+        description:
+          "Enterprise AI applications and LLM integrations — chatbots, RAG knowledge bases, Agent workflows and on-chain AI use cases.",
+        features: [
+          "LLM fine-tuning & private deployment",
+          "RAG knowledge bases & vector search",
+          "AI Agents & workflow orchestration",
+          "AI + blockchain fusion applications",
+        ],
+      },
+      {
+        id: "cross-border-ecommerce",
+        icon: "🛒",
+        title: "Cross-Border E-commerce",
+        description:
+          "End-to-end cross-border commerce platforms with multi-language, multi-currency and global payments, including Web3 payment rails.",
+        features: [
+          "Standalone & multi-store systems",
+          "Multi-language / multi-currency",
+          "Global payments & crypto settlement",
+          "Logistics, customs & tax integrations",
+        ],
+      },
+      {
+        id: "chat-software",
+        icon: "💬",
+        title: "Chat Software",
+        description:
+          "High-concurrency messaging and social apps with end-to-end encryption, group chat, voice & video calls and Web3 identity.",
+        features: [
+          "End-to-end encrypted messaging",
+          "Group chat / channels / A/V calls",
+          "Wallet login & on-chain identity",
+          "Bots and open API ecosystem",
+        ],
+      },
+      {
+        id: "anime-games",
+        icon: "🎮",
+        title: "Anime & Games",
+        description:
+          "Full-stack game development across anime, casual and GameFi genres, with on-chain assets, NFT items and cross-platform publishing.",
+        features: [
+          "Unity / Unreal client development",
+          "High-performance game servers",
+          "NFT items & on-chain asset systems",
+          "GameFi tokenomics design",
+        ],
+      },
     ],
     portfolio: [
       {
@@ -569,6 +798,46 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         tags: ["Solidity", "ERC-3643", "Node.js", "PostgreSQL"],
         results: ["$100M Tokenized", "5K Investors", "4 Jurisdictions"],
       },
+      {
+        id: "ai-agent-platform",
+        title: "Enterprise AI Agent Platform",
+        category: "AI",
+        description:
+          "Multi-agent platform for a fintech client combining RAG knowledge bases with a private LLM, replacing 60% of manual support work.",
+        imageUrl: "/portfolio/ai.jpg",
+        tags: ["LangGraph", "OpenAI", "Qdrant", "Next.js"],
+        results: ["200K+ Daily Sessions", "60% Human Deflection", "1.2s Avg Response"],
+      },
+      {
+        id: "cross-border-store",
+        title: "Global DTC Storefront",
+        category: "Cross-Border E-commerce",
+        description:
+          "Multi-store DTC platform for North America, Europe and SEA with 12 languages, 8 fiat currencies and stablecoin settlement.",
+        imageUrl: "/portfolio/ecommerce.jpg",
+        tags: ["Next.js", "Stripe", "USDC", "Shopify Hydrogen"],
+        results: ["3.5x YoY GMV", "25 Countries", "-42% Settlement Cost"],
+      },
+      {
+        id: "web3-messenger",
+        title: "Web3 Encrypted Messenger",
+        category: "Chat Software",
+        description:
+          "End-to-end encrypted IM with wallet login, group chat, A/V calls and on-chain identity, powering 40+ DAO communities.",
+        imageUrl: "/portfolio/chat.jpg",
+        tags: ["Signal Protocol", "WebRTC", "SIWE", "Rust"],
+        results: ["300K+ MAU", "<150ms P99 Latency", "40+ Communities"],
+      },
+      {
+        id: "anime-gamefi",
+        title: "Anime GameFi Title",
+        category: "Anime & Games",
+        description:
+          "Cross-platform anime card game blending NFT characters, on-chain battle settlement and GameFi tokenomics on iOS, Android and Web.",
+        imageUrl: "/portfolio/game.jpg",
+        tags: ["Unity", "Cocos", "Solana", "ERC-1155"],
+        results: ["800K First-Month Installs", "12% Payer Rate", "$20M NFT Volume"],
+      },
     ],
     team: [
       {
@@ -594,6 +863,72 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         role: "Lead Security Researcher",
         bio: "Found 50+ critical bugs across top 20 protocols. Former lead auditor at Trail of Bits.",
         imageUrl: "/team/yuki.jpg",
+      },
+      {
+        name: "Wei Zhang",
+        role: "Head of AI",
+        bio: "Former Google DeepMind research engineer. Shipped LLM agent and RAG systems serving 100M+ users.",
+        imageUrl: "/team/wei.jpg",
+      },
+      {
+        name: "Emma Silva",
+        role: "Head of Cross-Border Commerce",
+        bio: "Former Shopify Plus solution architect. Scaled 5 DTC brands past $100M annual GMV globally.",
+        imageUrl: "/team/emma.jpg",
+      },
+      {
+        name: "David Kim",
+        role: "Messaging Architect",
+        bio: "Former LINE and Signal core engineer. 10+ years building distributed IM, E2EE and real-time A/V.",
+        imageUrl: "/team/david.jpg",
+      },
+      {
+        name: "Nina Wu",
+        role: "Game Studio Lead",
+        bio: "Former miHoYo art director and technical designer. Shipped multiple anime mobile games featured by Apple.",
+        imageUrl: "/team/nina.jpg",
+      },
+    ],
+    faq: [
+      {
+        question: "What development services does NEXT AI offer?",
+        answer:
+          "End-to-end delivery across blockchain (smart contracts, dApps, DeFi, NFTs, audits, consulting), AI (LLM/Agent/RAG), cross-border e-commerce, chat software (IM/E2EE) and anime & games (Unity/Cocos + GameFi).",
+      },
+      {
+        question: "Which blockchains and L2s do you support?",
+        answer:
+          "15+ production chains including Ethereum, Solana, Polygon, BNB Chain, Arbitrum, Optimism, Base, Avalanche, TON, Aptos, Sui and Cosmos SDK networks.",
+      },
+      {
+        question: "How long does a typical project take?",
+        answer:
+          "MVPs usually ship in 4-6 weeks and production releases in 8-16 weeks. We work in two-week agile sprints with a runnable demo and code hand-off at every milestone.",
+      },
+      {
+        question: "Do you support private LLM deployment?",
+        answer:
+          "Yes. We fine-tune and self-host open models such as Llama, Qwen and DeepSeek on customer VPCs, wire them into RAG knowledge bases and Agent workflows, and meet data-residency requirements.",
+      },
+      {
+        question: "What does the cross-border e-commerce stack cover?",
+        answer:
+          "Standalone and multi-store systems with 12+ languages, 8+ fiat currencies and USDC/USDT settlement, integrated with Stripe, PayPal, Alipay International, logistics, customs, tax and regional compliance.",
+      },
+      {
+        question: "How do you keep chat software secure and fast?",
+        answer:
+          "End-to-end encryption via the Signal Protocol, optional wallet login (SIWE), and a distributed messaging gateway achieving <150ms P99 latency with millions of concurrent users and A/V calls.",
+      },
+      {
+        question: "Can anime and game titles include on-chain assets?",
+        answer:
+          "Yes. Unity / Unreal / Cocos clients paired with ERC-721/1155 or Solana NFT standards enable on-chain ownership of characters, items and skins with secondary trading and full GameFi tokenomics.",
+      },
+      {
+        question: "How do we get started?",
+        answer:
+          "Submit a project brief on /contact or email slagga@duck.com. We reply within 24 hours and schedule a 30-minute technical scoping call.",
       },
     ],
     ui: {
@@ -686,6 +1021,23 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         "NFT",
         "crypto",
         "blockchain development company",
+        "AI development",
+        "LLM integration",
+        "AI agents",
+        "RAG",
+        "cross-border e-commerce",
+        "chat software development",
+        "instant messaging",
+        "end-to-end encryption",
+        "anime game development",
+        "GameFi",
+        "Solana development",
+        "Ethereum development",
+        "Layer 2",
+        "RWA tokenization",
+        "smart contract audit",
+        "Web3 consulting",
+        "NEXT AI",
       ],
       pages: {
         about: {
@@ -779,6 +1131,9 @@ export const PORTFOLIO: readonly PortfolioItem[] = content.portfolio;
 
 /** Team members */
 export const TEAM: readonly TeamMember[] = content.team;
+
+/** FAQ entries (used for FAQPage JSON-LD + on-page rendering) */
+export const FAQ: readonly FaqEntry[] = content.faq;
 
 /** UI text language pack */
 export const UI_TEXT = content.ui;

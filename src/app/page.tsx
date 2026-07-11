@@ -5,6 +5,7 @@ import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { getRequestLocale } from "@/lib/locale";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -22,6 +23,7 @@ export default async function HomePage(): Promise<React.ReactElement> {
       <PortfolioSection locale={locale} />
       <CtaSection locale={locale} />
       <AboutSection locale={locale} />
+      <FaqSection locale={locale} />
       <ContactSection locale={locale} />
       <SpeedInsights />
     </>
