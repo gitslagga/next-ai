@@ -2,6 +2,7 @@ import { getSiteContent, type Locale } from "@/lib/constants";
 import React from "react";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ServiceIcon } from "@/components/ui/ServiceIcon";
 
 interface ServicesSectionProps {
   readonly locale: Locale;
@@ -27,8 +28,8 @@ export function ServicesSection({ locale }: ServicesSectionProps): React.ReactEl
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <GlowCard key={service.id} className="flex flex-col h-full">
-              <div className="text-3xl mb-4">{service.icon}</div>
+            <GlowCard key={service.id} className="group flex flex-col h-full">
+              <ServiceIcon name={service.icon} />
               <h3 className="text-xl font-bold text-white mb-3">
                 {service.title}
               </h3>

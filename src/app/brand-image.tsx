@@ -3,8 +3,8 @@ import { ImageResponse } from "next/og";
 
 const BRAND_COLORS = {
   dark: "#0a0a1a",
-  darkSoft: "#121226",
-  stroke: "rgba(0, 240, 255, 0.22)",
+  darkSoft: "#11182e",
+  stroke: "rgba(103, 232, 249, 0.72)",
   primary: "#00f0ff",
   accent: "#b347ea",
   text: "#f8fafc",
@@ -37,36 +37,25 @@ export function BrandMark({ size }: BrandMarkProps): React.ReactElement {
       }}
     >
       <defs>
-        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="bg-gradient" x1="10%" y1="5%" x2="90%" y2="95%">
           <stop offset="0%" stopColor={BRAND_COLORS.darkSoft} />
           <stop offset="100%" stopColor={BRAND_COLORS.dark} />
         </linearGradient>
-        <linearGradient id="stroke-gradient" x1="18%" y1="14%" x2="88%" y2="86%">
-          <stop offset="0%" stopColor={BRAND_COLORS.primary} />
-          <stop offset="100%" stopColor={BRAND_COLORS.accent} />
+        <linearGradient id="stroke-gradient" x1="12%" y1="10%" x2="90%" y2="92%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="42%" stopColor={BRAND_COLORS.primary} />
+          <stop offset="100%" stopColor="#d8b4fe" />
         </linearGradient>
       </defs>
-      <rect x="6" y="6" width="88" height="88" rx="22" fill="url(#bg-gradient)" />
-      <rect x="6.5" y="6.5" width="87" height="87" rx="21.5" fill="none" stroke={BRAND_COLORS.stroke} />
+      <rect x="3" y="3" width="94" height="94" rx="24" fill="url(#bg-gradient)" />
+      <rect x="4.5" y="4.5" width="91" height="91" rx="22.5" fill="none" stroke={BRAND_COLORS.stroke} strokeWidth="3" />
       <path
-        d="M28 72V28"
-        stroke={BRAND_COLORS.primary}
-        strokeWidth="10"
-        strokeLinecap="round"
-      />
-      <path
-        d="M72 72V28"
-        stroke={BRAND_COLORS.accent}
-        strokeWidth="10"
-        strokeLinecap="round"
-      />
-      <path
-        d="M36 67L64 33"
+        d="M27 70V30L73 70V30"
         stroke="url(#stroke-gradient)"
-        strokeWidth="10"
+        strokeWidth="11"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <circle cx="76" cy="24" r="4" fill={BRAND_COLORS.primary} />
     </svg>
   );
 }
@@ -81,7 +70,7 @@ export function createBrandImageResponse({
   subtitle,
 }: BrandImageOptions): ImageResponse {
   const isCard = Boolean(title);
-  const markSize = isCard ? 180 : Math.round(Math.min(width, height) * 0.62);
+  const markSize = isCard ? 180 : Math.round(Math.min(width, height) * 0.92);
 
   return new ImageResponse(
     (
@@ -94,41 +83,47 @@ export function createBrandImageResponse({
           overflow: "hidden",
           alignItems: "center",
           justifyContent: "center",
-          background: `linear-gradient(135deg, ${BRAND_COLORS.dark} 0%, #090914 50%, #151534 100%)`,
+          background: isCard
+            ? `linear-gradient(135deg, ${BRAND_COLORS.dark} 0%, #090914 50%, #151534 100%)`
+            : BRAND_COLORS.dark,
           color: BRAND_COLORS.text,
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            left: "-10%",
-            top: "-20%",
-            width: "38%",
-            height: "54%",
-            borderRadius: "9999px",
-            background: "rgba(0, 240, 255, 0.14)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: "-10%",
-            bottom: "-20%",
-            width: "40%",
-            height: "56%",
-            borderRadius: "9999px",
-            background: "rgba(179, 71, 234, 0.16)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 28,
-            display: "flex",
-            borderRadius: 44,
-            border: `1px solid ${BRAND_COLORS.stroke}`,
-          }}
-        />
+        {isCard ? (
+          <>
+            <div
+              style={{
+                position: "absolute",
+                left: "-10%",
+                top: "-20%",
+                width: "38%",
+                height: "54%",
+                borderRadius: "9999px",
+                background: "rgba(0, 240, 255, 0.14)",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                right: "-10%",
+                bottom: "-20%",
+                width: "40%",
+                height: "56%",
+                borderRadius: "9999px",
+                background: "rgba(179, 71, 234, 0.16)",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 28,
+                display: "flex",
+                borderRadius: 44,
+                border: `1px solid ${BRAND_COLORS.stroke}`,
+              }}
+            />
+          </>
+        ) : null}
         {isCard ? (
           <div
             style={{

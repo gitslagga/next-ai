@@ -9,9 +9,21 @@ export interface NavLink {
 }
 
 /** Service offering card */
+export type ServiceIconName =
+  | "file-code"
+  | "monitor"
+  | "landmark"
+  | "palette"
+  | "shield-check"
+  | "lightbulb"
+  | "bot"
+  | "shopping-cart"
+  | "message-circle"
+  | "gamepad";
+
 export interface Service {
   readonly id: string;
-  readonly icon: string;
+  readonly icon: ServiceIconName;
   readonly title: string;
   readonly description: string;
   readonly features: readonly string[];

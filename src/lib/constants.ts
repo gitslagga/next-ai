@@ -131,7 +131,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
     services: [
       {
         id: "smart-contracts",
-        icon: "📜",
+        icon: "file-code",
         title: "智能合约开发",
         description:
           "由顶级安全团队审计的高安全、低 Gas 智能合约。支持 Solidity、Rust（Solana）与 Move，保障千万级 TVL 安全。",
@@ -144,7 +144,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "dapp-development",
-        icon: "🖥️",
+        icon: "monitor",
         title: "dApp 开发",
         description:
           "打造全栈去中心化应用，兼顾易用体验与高性能。前端与链上后端无缝衔接，快速落地业务。",
@@ -157,7 +157,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "defi-solutions",
-        icon: "🏦",
+        icon: "landmark",
         title: "DeFi 解决方案",
         description:
           "从概念设计到主网上线的一站式 DeFi 平台开发。已服务产品累计交易量超过 20 亿美元。",
@@ -170,7 +170,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "nft-platforms",
-        icon: "🎨",
+        icon: "palette",
         title: "NFT 与资产通证化",
         description:
           "提供端到端 NFT 平台与现实资产通证化能力。我们推出的系列二级市场交易量累计超 10000 ETH。",
@@ -183,7 +183,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "security-audit",
-        icon: "🔒",
+        icon: "shield-check",
         title: "安全与审计",
         description:
           "全面覆盖智能合约安全审计与链上监控。团队累计发现并修复 200+ 高危漏洞。",
@@ -196,7 +196,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "consulting",
-        icon: "💡",
+        icon: "lightbulb",
         title: "区块链咨询",
         description:
           "面向企业的 Web3 战略咨询服务。通过架构设计与技术路线规划，帮助你稳健完成链上化转型。",
@@ -209,7 +209,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "ai-solutions",
-        icon: "🤖",
+        icon: "bot",
         title: "人工智能开发",
         description:
           "面向企业的 AI 应用与大模型集成服务，涵盖智能对话、RAG 知识库、Agent 工作流与链上 AI 场景落地。",
@@ -222,7 +222,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "cross-border-ecommerce",
-        icon: "🛒",
+        icon: "shopping-cart",
         title: "跨境电商",
         description:
           "端到端跨境电商平台开发，支持多语言、多币种与全球支付，助力品牌快速出海并接入 Web3 支付通道。",
@@ -235,7 +235,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "chat-software",
-        icon: "💬",
+        icon: "message-circle",
         title: "聊天软件",
         description:
           "高并发即时通讯与社交软件开发，支持端到端加密、群组、音视频通话与 Web3 身份体系。",
@@ -248,7 +248,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "anime-games",
-        icon: "🎮",
+        icon: "gamepad",
         title: "动漫游戏",
         description:
           "覆盖二次元、休闲与 GameFi 全品类的游戏研发服务，支持链上资产、NFT 道具与跨端发行。",
@@ -608,7 +608,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
     services: [
       {
         id: "smart-contracts",
-        icon: "📜",
+        icon: "file-code",
         title: "Smart Contract Development",
         description:
           "Secure, gas-optimized smart contracts audited by leading firms. We write Solidity, Rust (Solana), and Move contracts that protect millions in TVL.",
@@ -621,7 +621,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "dapp-development",
-        icon: "🖥️",
+        icon: "monitor",
         title: "dApp Development",
         description:
           "Full-stack decentralized applications with intuitive UX. We build responsive frontends that connect seamlessly to blockchain backends.",
@@ -634,7 +634,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "defi-solutions",
-        icon: "🏦",
+        icon: "landmark",
         title: "DeFi Solutions",
         description:
           "Custom decentralized finance platforms from concept to mainnet. Our DeFi products have processed over $2B in total volume.",
@@ -647,7 +647,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "nft-platforms",
-        icon: "🎨",
+        icon: "palette",
         title: "NFT & Tokenization",
         description:
           "End-to-end NFT platforms and real-world asset tokenization. We've launched collections generating 10,000+ ETH in secondary volume.",
@@ -660,7 +660,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "security-audit",
-        icon: "🔒",
+        icon: "shield-check",
         title: "Security & Auditing",
         description:
           "Comprehensive smart contract security audits and on-chain monitoring. Our team has identified and patched 200+ critical vulnerabilities.",
@@ -673,7 +673,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "consulting",
-        icon: "💡",
+        icon: "lightbulb",
         title: "Blockchain Consulting",
         description:
           "Strategic guidance for Web3 adoption. We help enterprises navigate blockchain integration with architecture design and technical roadmaps.",
@@ -686,7 +686,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "ai-solutions",
-        icon: "🤖",
+        icon: "bot",
         title: "AI Development",
         description:
           "Enterprise AI applications and LLM integrations — chatbots, RAG knowledge bases, Agent workflows and on-chain AI use cases.",
@@ -699,7 +699,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "cross-border-ecommerce",
-        icon: "🛒",
+        icon: "shopping-cart",
         title: "Cross-Border E-commerce",
         description:
           "End-to-end cross-border commerce platforms with multi-language, multi-currency and global payments, including Web3 payment rails.",
@@ -712,7 +712,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "chat-software",
-        icon: "💬",
+        icon: "message-circle",
         title: "Chat Software",
         description:
           "High-concurrency messaging and social apps with end-to-end encryption, group chat, voice & video calls and Web3 identity.",
@@ -725,7 +725,7 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       },
       {
         id: "anime-games",
-        icon: "🎮",
+        icon: "gamepad",
         title: "Anime & Games",
         description:
           "Full-stack game development across anime, casual and GameFi genres, with on-chain assets, NFT items and cross-platform publishing.",
