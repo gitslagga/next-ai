@@ -10,7 +10,7 @@ export const revalidate = 86400;
  * discover the most citation-worthy resources on the site.
  */
 export function GET(): NextResponse {
-  const { company, services, seo, faq } = getSiteContent("en");
+  const { company, services, portfolio, seo, faq } = getSiteContent("en");
 
   const lines: string[] = [];
   lines.push(`# ${company.name}`);
@@ -26,7 +26,16 @@ export function GET(): NextResponse {
   lines.push("");
   lines.push("## Services");
   for (const service of services) {
-    lines.push(`- **${service.title}** — ${service.description}`);
+    lines.push(
+      `- [**${service.title}**](${SITE_URL}/services#${service.id}) — ${service.description} Includes: ${service.features.join("; ")}.`,
+    );
+  }
+  lines.push("");
+  lines.push("## Selected Case Studies");
+  for (const item of portfolio) {
+    lines.push(
+      `- [**${item.title}**](${SITE_URL}/portfolio#${item.id}) (${item.category}) — ${item.description} Focus: ${[...item.tags, ...item.results].join("; ")}.`,
+    );
   }
   lines.push("");
   lines.push("## FAQ");

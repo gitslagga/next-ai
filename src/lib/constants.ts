@@ -259,6 +259,19 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
           "GameFi 经济模型设计",
         ],
       },
+      {
+        id: "lead-generation",
+        icon: "target",
+        title: "引流获客",
+        description:
+          "围绕业务目标搭建从内容触达到线索转化的获客闭环，整合多渠道投放、落地页、数据追踪与自动化跟进。",
+        features: [
+          "多渠道内容与广告获客",
+          "高转化落地页与表单设计",
+          "线索追踪、归因与数据分析",
+          "线索分层及自动化培育",
+        ],
+      },
     ],
     portfolio: [
       {
@@ -360,6 +373,16 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         imageUrl: "/portfolio/game.jpg",
         tags: ["Unity", "Cocos", "Solana", "ERC-1155"],
         results: ["首月下载 80 万", "付费率 12%", "NFT 交易额 $2000 万"],
+      },
+      {
+        id: "lead-generation",
+        title: "引流获客增长项目",
+        category: "增长营销",
+        description:
+          "搭建覆盖内容、广告、落地页和线索管理的获客系统，帮助团队追踪渠道效果并持续优化从访问到咨询的转化路径。",
+        imageUrl: "/portfolio/lead-generation.jpg",
+        tags: ["内容营销", "广告投放", "SEO", "CRM 自动化"],
+        results: ["整合多渠道获客入口", "打通线索追踪与归因", "建立自动化培育流程"],
       },
     ],
     team: [
@@ -527,9 +550,9 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       rootTitleDefault: "NEXT AI - 区块链软件开发",
       rootTitleTemplate: "%s | NEXT AI",
       rootDescription:
-        "NEXT AI 专注构建安全、可扩展的区块链解决方案，涵盖智能合约、dApp、DeFi 协议与 Web3 技术咨询。",
+        "NEXT AI 提供区块链、AI 与数字营销服务，涵盖智能合约、dApp、DeFi、引流获客与 Web3 技术咨询，助力企业实现产品增长。",
       openGraphLocale: "zh_CN",
-      openGraphDescription: "用安全、可扩展的区块链方案构建去中心化未来。",
+      openGraphDescription: "从区块链、AI 开发到引流获客，NEXT AI 为企业构建可扩展的数字化增长方案。",
       keywords: [
         "区块链",
         "智能合约",
@@ -552,6 +575,11 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         "端到端加密",
         "动漫游戏开发",
         "GameFi",
+        "引流获客",
+        "获客系统",
+        "线索获取",
+        "数字营销",
+        "增长营销",
         "Solana 开发",
         "以太坊开发",
         "Layer 2",
@@ -566,14 +594,14 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
             "认识 NEXT AI 团队：由区块链工程师、密码学研究者与产品专家组成，专注打造去中心化未来。",
         },
         services: {
-          title: "服务",
+          title: "服务：区块链开发与引流获客",
           description:
-            "端到端区块链开发服务：智能合约、dApp、DeFi、NFT、安全审计与咨询。",
+            "提供区块链、AI 与数字营销服务，涵盖智能合约、dApp、DeFi、安全审计、技术咨询及引流获客。",
         },
         portfolio: {
-          title: "案例",
+          title: "项目案例：区块链与引流获客",
           description:
-            "来自 50+ 区块链项目的交付案例：DeFi 协议、NFT 平台、DAO 治理、游戏钱包与资产通证化。",
+            "查看 NEXT AI 的区块链、AI 与引流获客项目案例，涵盖 DeFi 协议、NFT 平台、游戏钱包、资产通证化及增长营销。",
         },
         contact: {
           title: "联系我们",
@@ -736,6 +764,19 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
           "GameFi tokenomics design",
         ],
       },
+      {
+        id: "lead-generation",
+        icon: "target",
+        title: "Lead Generation",
+        description:
+          "Build an acquisition funnel around your business goals, combining multi-channel campaigns, landing pages, tracking and automated follow-up.",
+        features: [
+          "Multi-channel content and paid acquisition",
+          "Conversion-focused landing pages and forms",
+          "Lead tracking, attribution and analytics",
+          "Lead segmentation and automated nurturing",
+        ],
+      },
     ],
     portfolio: [
       {
@@ -837,6 +878,20 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         imageUrl: "/portfolio/game.jpg",
         tags: ["Unity", "Cocos", "Solana", "ERC-1155"],
         results: ["800K First-Month Installs", "12% Payer Rate", "$20M NFT Volume"],
+      },
+      {
+        id: "lead-generation",
+        title: "Lead Generation Growth Project",
+        category: "Growth Marketing",
+        description:
+          "An acquisition system spanning content, ads, landing pages and lead management, giving the team channel-level performance tracking and a clear path from visit to inquiry.",
+        imageUrl: "/portfolio/lead-generation.jpg",
+        tags: ["Content Marketing", "Paid Ads", "SEO", "CRM Automation"],
+        results: [
+          "Unified multi-channel acquisition",
+          "Connected lead tracking and attribution",
+          "Automated lead nurturing workflow",
+        ],
       },
     ],
     team: [
@@ -1007,10 +1062,10 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
       rootTitleDefault: "NEXT AI - Blockchain Software Development",
       rootTitleTemplate: "%s | NEXT AI",
       rootDescription:
-        "NEXT AI builds secure, scalable blockchain solutions. Smart contracts, dApps, DeFi protocols, and Web3 consulting for the decentralized future.",
+        "NEXT AI builds secure blockchain and AI products, plus lead generation systems spanning content, paid campaigns, landing pages and conversion tracking.",
       openGraphLocale: "en_US",
       openGraphDescription:
-        "Build the decentralized future with secure, scalable blockchain solutions.",
+        "From blockchain and AI development to lead generation, NEXT AI builds scalable digital growth solutions for businesses.",
       keywords: [
         "blockchain",
         "smart contracts",
@@ -1031,6 +1086,11 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
         "end-to-end encryption",
         "anime game development",
         "GameFi",
+        "lead generation",
+        "customer acquisition",
+        "lead management",
+        "growth marketing",
+        "digital marketing",
         "Solana development",
         "Ethereum development",
         "Layer 2",
@@ -1046,14 +1106,14 @@ const SITE_CONTENT: Readonly<Record<Locale, SiteContent>> = {
             "Meet the NEXT AI team - blockchain engineers, cryptographers, and product builders creating the decentralized future.",
         },
         services: {
-          title: "Services",
+          title: "Services: Blockchain, AI & Lead Generation",
           description:
-            "End-to-end blockchain development services - smart contracts, dApps, DeFi, NFTs, security auditing, and consulting.",
+            "Blockchain, AI, and lead generation services, including smart contracts, dApps, DeFi, security auditing, consulting, and customer acquisition systems.",
         },
         portfolio: {
-          title: "Portfolio",
+          title: "Case Studies: Blockchain & Lead Generation",
           description:
-            "Case studies from 50+ blockchain projects - DeFi protocols, NFT platforms, DAO governance, gaming wallets, and asset tokenization.",
+            "Explore NEXT AI case studies across blockchain, AI, and lead generation, including DeFi protocols, NFT platforms, gaming wallets, asset tokenization, and growth marketing.",
         },
         contact: {
           title: "Contact",

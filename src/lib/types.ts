@@ -19,7 +19,8 @@ export type ServiceIconName =
   | "bot"
   | "shopping-cart"
   | "message-circle"
-  | "gamepad";
+  | "gamepad"
+  | "target";
 
 export interface Service {
   readonly id: string;

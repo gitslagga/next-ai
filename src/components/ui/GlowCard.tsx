@@ -8,6 +8,7 @@ interface GlowCardProps {
   readonly children: ReactNode;
   readonly className?: string;
   readonly hover?: boolean;
+  readonly id?: string;
 }
 
 /**
@@ -18,9 +19,11 @@ export function GlowCard({
   children,
   className = "",
   hover = true,
+  id,
 }: GlowCardProps): React.ReactElement {
   return (
     <div
+      id={id}
       className={`gradient-border rounded-xl bg-dark-50/80 backdrop-blur-sm p-6 ${
         hover ? "hover:glow hover:-translate-y-1 transition-all duration-300" : ""
       } ${className}`}

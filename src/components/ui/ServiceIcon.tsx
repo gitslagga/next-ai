@@ -69,6 +69,14 @@ const ICON_PATHS: Readonly<Record<ServiceIconName, React.ReactNode>> = {
       <path d="M7 12v4M5 14h4M16 13h.01M19 15h.01" />
     </>
   ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1" />
+      <path d="m16 8 5-5M17 3h4v4" />
+    </>
+  ),
 };
 
 /** A crisp, consistent line icon for a service card. */

@@ -34,7 +34,11 @@ export function PortfolioSection({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((item) => (
-            <GlowCard key={item.id} className="flex flex-col h-full group">
+            <GlowCard
+              id={item.id}
+              key={item.id}
+              className="flex flex-col h-full group"
+            >
               {/* Category Badge */}
               <div className="mb-4">
                 <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
